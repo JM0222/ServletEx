@@ -8,23 +8,56 @@
 	<h1 id ="top">Hello world</h1>
 	<hr/>
 	<p> 정적 HTML로 작성된 페이지입니다 (단락지정) </p>
-	<a href = "hello.jsp?name=Servlet">GO JSP(GET method)</a>
+	<a href = "hello.jsp?name=Servlet" target="_blank">GO JSP(GET method)</a>
+	<p>
+		<a href="hs?name=Servlet">Servlet 호출(GET 방식)</a>
+	</p>
 	<p> <del>동적</del> <mark>정적</mark> <ins>HTML</ins> 연속공백은<q>"&nbsp;"</q> </p>
 	<pre>
 		작성된 그대로 표시되는 pre태그
 		var myArray = [];
 		console.log(myArray.length); // 0
-		
-		myArray[1000] = true;  // [ , , ... , , true ]
 	</pre>
+	<table border="1">
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td colspan=2>Jill(colspan)</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
+	<a href="http://www.google.com">Visit google.com!</a>
 	<blockquote>
-		This is a blockquote
+		This is a blockquote<br/>
 		target attribute 
 			- 1 target = "_blank" -> 새로운 윈도우
-			- 2 target = "_seft"  ->  현재 윈도우
+			- 2 target = "_self"  ->  현재 윈도우
  	</blockquote>
- 	<img src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20120121_284%2Fstron1934_1327154567087USFvC_JPEG%2Fdrogba_380_1168256a.jpg&type=sc960_832">
- 	
-	<a href="#top">GO TO TOP</a>
+ 	<form action="hs" method="post">
+ 		<label for = "id">id</label>
+ 		<input type = "text" id = "id" name="id">
+ 		<br/>
+ 		<label for = "id2">id2</label>
+ 		<input type = "text" id = "id2" name="id2">
+ 		<br/>
+ 		<input type="submit" value = "submit">
+ 	</form>
+ 	<p>
+	 	<img src ="images/img.png" alt = "유이"/>
+		<a href="#top">GO TO TOP</a>
+	</p>
 </body>
 </html>
