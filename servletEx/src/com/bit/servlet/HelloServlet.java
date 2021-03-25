@@ -32,14 +32,14 @@ public class HelloServlet extends HttpServlet {
 		// 파라미터 받아오기
 		// FORM 내의 input 태그의 name 속성 
 		// FORM 의 입력 데이터 인코딩
-		req.setCharacterEncoding("UTF-8");
+//		req.setCharacterEncoding("UTF-8");  -> 필터처리
 		
 		String id = req.getParameter("id");
 		String id2 = req.getParameter("id2");
 		
 		// 출력
 		// 응답되는 데이터가 text/html 임을 브라우저에게 알림
-		resp.setContentType("text/html;charset=UTF-8");
+//		resp.setContentType("text/html;charset=UTF-8"); -> 필터에서 처리
 		PrintWriter out = resp.getWriter();
 		out.println("<h1>This is id: " + id + "</h1>");
 		out.println("<small>This is id2: " + id2 + "</small>");
