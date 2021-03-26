@@ -9,6 +9,11 @@
 <head>
 <meta charset="UTF-8">
 <title>메일링 리스트 확인</title>
+<style type="text/css">
+ a:link { color: red; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: Orange; text-decoration: none;}
+</style>
 </head>
 <body>
 	<h1>메일링 리스트</h1>
@@ -31,9 +36,19 @@
 			<th>이메일</th>
 			<td><%= vo.getEmail() %></td>
 		</tr>
+		<tr>
+			<td colspan = "2">
+				<form action = "delete.jsp">
+					<input type="hidden" name = "no" value="<%=vo.getNo() %>"/>
+					<input type="submit" value = "DELETE"/>
+				</form>
+			</tr>
 	</table>			
 		 <%
 	}
 	%>	
+	<p>
+		<a href = "form.jsp">메일링 리스트 가입</a>
+	</p>
 </body>
 </html>

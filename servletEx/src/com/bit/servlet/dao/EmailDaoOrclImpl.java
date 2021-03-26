@@ -1,11 +1,13 @@
 package com.bit.servlet.dao;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.*;
 public class EmailDaoOrclImpl implements EmailDao {
 	// 커넥션 접속부 분리
 	private Connection getConnection() throws SQLException {
@@ -65,14 +67,58 @@ public class EmailDaoOrclImpl implements EmailDao {
 
 	@Override
 	public int insert(EmailVo vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int insertcnt = 0;
+		
+		try {
+			conn = getConnection();
+			String sql = "INSERT INTO emaillist (no, last_name, first_name, email)" +
+			"VALUES(seq_emaillist_pk.NEXTVAL,?,?,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getLastName());
+			pstmt.setString(2, vo.getFirstName());
+			pstmt.setString(3, vo.getEmail());
+			
+			insertcnt = pstmt.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				conn.close();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return insertcnt;
 	}
 
 	@Override
 	public int delete(Long no) {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int deletecnt = 0;
+		
+		try {
+			conn = getConnection();
+			String sql = "DELETE FROM emaillist where no = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, no);
+			
+			deletecnt = pstmt.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return deletecnt;
 	}
 
 }

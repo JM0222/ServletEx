@@ -3,11 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Servlet 연습</title>
+<style type="text/css">
+	@font-face{
+            font-family:"nuri";
+            src: url("fonts/HangeulNuriB.ttf");}
+        h1{font-family: "nuri";}
+	 a:link { color: red; text-decoration: none;}
+	 a:visited { color: black; text-decoration: none;}
+	 a:hover { color: Orange; text-decoration: none;}
+	 *{font-family:"nuri";}
+</style>
 </head>
 <body>
-	<h1 id ="top">Hello world</h1>
+	<h1 id ="top">Hello world(나눔누리폰트)</h1>
 	<hr/>
-	<p> 정적 HTML로 작성된 페이지입니다 (단락지정) </p>
+	<p> 정적 HTML로 작성된 페이지입니다. (단락지정p태그) </p>
 	<a href = "hello.jsp?name=Servlet" target="_blank">GO JSP(GET method)</a>
 	<p>
 		<a href="hs?name=Servlet">Servlet 호출(GET 방식)</a>
@@ -42,6 +52,9 @@
 	<p>
 		<a href="life">라이프사이클 로그 확인</a>
 	</p>
+	<p>
+		<a href="emaillist/index.jsp">emaillist</a>
+	</p>
 	<blockquote>
 		This is a blockquote<br/>
 		target attribute 
@@ -49,7 +62,7 @@
 			- 2 target = "_self"  ->  현재 윈도우
  	</blockquote>
  	<form action="hs" method="post">
- 		<label for = "id">id</label>
+ 		<label for = "id">id1</label>
  		<input type = "text" id = "id" name="id">
  		<br/>
  		<label for = "id2">id2</label>
@@ -59,6 +72,7 @@
  	</form>
  	<p>
 	 	<img src ="images/img.png" alt = "유이"/>
+	 	<br/>
 		<a href="#top">GO TO TOP</a>
 	</p>
 </body>
