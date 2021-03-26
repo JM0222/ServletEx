@@ -39,7 +39,7 @@ public class HelloServlet extends HttpServlet {
 		
 		// 출력
 		// 응답되는 데이터가 text/html 임을 브라우저에게 알림
-//		resp.setContentType("text/html;charset=UTF-8"); -> 필터에서 처리
+//		resp.setContentType("text/html;charset=UTF-8"); -> 필터에서 처리-
 		PrintWriter out = resp.getWriter();
 		out.println("<h1>This is id: " + id + "</h1>");
 		out.println("<small>This is id2: " + id2 + "</small>");

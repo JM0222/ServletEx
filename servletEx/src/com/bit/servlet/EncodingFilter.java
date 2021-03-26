@@ -39,8 +39,4 @@ public class EncodingFilter implements Filter {
 		// TODO Auto-generated method stub
 		Filter.super.destroy();
 	}
-
-
-
-
 }
