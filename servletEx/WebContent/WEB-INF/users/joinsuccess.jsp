@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 가입 완료</title>
 </head>
 <body>
-	<h1>404 Error</h1>
-	<b>뭔가 문제가있는거겠지..</b>
-	<br/>
-	<img src ="무야호.jpg"/>
+	<h1>회원 가입 성공</h1>
+	<p>회원에 가입을 축하합니다</p>
+	
+	<a href="<%= request.getContextPath() %>/">홈으로</a>
 </body>
 </html>

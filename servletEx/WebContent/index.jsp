@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Servlet 연습</title>
-<style type="text/css">
-	@font-face{
-            font-family:"nuri";
-            src: url("fonts/HangeulNuriB.ttf");}
-        h1{font-family: "nuri";}
-	 a:link { color: red; text-decoration: none;}
-	 a:visited { color: black; text-decoration: none;}
-	 a:hover { color: Orange; text-decoration: none;}
-	 *{font-family:"nuri";}
-</style>
-</head>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- 다른페이지 파일 포함 -->
+<%@ include file="/WEB-INF/includes/header.jsp" %>
 <body>
 	<h1 id ="top">Hello world(나눔누리폰트)</h1>
 	<hr/>
+	<ul>
+		<li><a href="<%= request.getContextPath() %>/users?a=joinform">회원가입</a></li>
+	</ul>
 	<p> 정적 HTML로 작성된 페이지입니다. (단락지정p태그) </p>
 	<a href = "hello.jsp?name=Servlet" target="_blank">GO JSP(GET method)</a>
 	<p>
@@ -55,6 +46,9 @@
 	<p>
 		<a href="emaillist/index.jsp">emaillist</a>
 	</p>
+	<p>
+		<a href="el">MVC패턴연습</a>
+	</p>
 	<blockquote>
 		This is a blockquote<br/>
 		target attribute 
@@ -75,5 +69,4 @@
 	 	<br/>
 		<a href="#top">GO TO TOP</a>
 	</p>
-</body>
-</html>
+<%@ include file="/WEB-INF/includes/footer.jsp" %>
